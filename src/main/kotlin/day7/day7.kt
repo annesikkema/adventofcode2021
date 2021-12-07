@@ -21,7 +21,6 @@ private fun calculateFuel(positions: List<Int>, destination: Int): Long {
 
 private fun getCrabPositions(): List<Int> {
     return ResourcesFileReader().getStringValues(FILE_NAME)
-        .map { it.split(",") }
-        .flatten()
+        .flatMap { it.split(",") }
         .map { it.toInt() }
 }
