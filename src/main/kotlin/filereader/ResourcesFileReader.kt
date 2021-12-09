@@ -14,4 +14,10 @@ class ResourcesFileReader {
         return getStringValues(resourceFile).map { string -> string.toInt() }
     }
 
+    fun getIntArrays(resourceFile: String): List<MutableList<Int>> {
+        return getStringValues(resourceFile).map { it.toIntList() }
+    }
+
+    private fun String.toIntList() = chunked(1).map { it.toInt() }.toMutableList()
+
 }

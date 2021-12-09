@@ -13,8 +13,11 @@ class Entry(string: String) {
 
     init {
         val parts = string.split(Constants.PARTS_DELIMITER)
-        signalPatterns = parts[0].split(Constants.PART_DELIMITER).map { it.sort() }.toMutableList()
-        outputValue = parts[1].split(Constants.PART_DELIMITER).map { it.sort() }
+        signalPatterns = parts[0].split(Constants.PART_DELIMITER)
+            .map { it.sort() }
+            .toMutableList()
+        outputValue = parts[1].split(Constants.PART_DELIMITER)
+            .map { it.sort() }
     }
 
     fun calculateValue(): Int {
