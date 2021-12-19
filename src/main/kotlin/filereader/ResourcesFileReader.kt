@@ -10,6 +10,10 @@ class ResourcesFileReader {
             .readLines()
     }
 
+    fun getStringValue(resourceFile: String): String {
+        return getStringValues(resourceFile).joinToString("")
+    }
+
     fun getIntValues(resourceFile: String): List<Int> {
         return getStringValues(resourceFile).map { string -> string.toInt() }
     }
